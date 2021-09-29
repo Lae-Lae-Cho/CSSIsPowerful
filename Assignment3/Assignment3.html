@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Assignment3</title>
+    <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <img class="logo" src="./camera.jpg" alt="LOGO" />
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+        <div class="navbar">
+            <button id="signbtn" class="signc"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <div class="menu1">
+                <img class="logo1" src="./camera.jpg" alt="LOGO1" />
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        const signbutton = document.getElementById("signbtn");
+        signbutton.onclick = handleClick;
+        function handleClick(e) {
+            const nav = document.querySelector(".menu1");
+            nav.classList.toggle("show-nav");
+        }
+    </script>
+</body>
+</html>
