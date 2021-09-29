@@ -84,8 +84,6 @@
 }
 @media screen and (max-width:992px) {
     .container {
-        width:80%;
-        height: 60%;
         border: 2px solid greenyellow;
     }
     .navbar{
