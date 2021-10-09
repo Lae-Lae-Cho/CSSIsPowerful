@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Developer Zone</title>
+    <link href="E:\CSS(CNH)\font-awesome-4.7.0\css\font-awesome.min.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: scroll;
+        }
+
+        .infobar {
+            width: 100%;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            background-color: #f2f3f5;
+            color: #aab2bd;
+            padding: 0 40px 0 40px;
+        }
+
+        .infotext {
+            width: 70%;
+            display: flex;
+            justify-content: flex-start;
+            cursor: pointer;
+        }
+
+        .infodownload {
+            margin-left: 35px;
+            cursor: pointer;
+        }
+
+        .infoicon {
+            width: 30%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .infoiconbtn {
+            width: 30px;
+            height: 35px;
+            border: none;
+            color: #aab2bd;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .infoiconbtn1:hover {
+            background-color: #42599e;
+            color: #fff;
+        }
+
+        .infoiconbtn2:hover {
+            background-color: #55acee;
+            color: #fff;
+        }
+
+        .infoiconbtn3:hover {
+            background-color: #db4437;
+            color: #fff;
+        }
+
+        .infoiconbtn4:hover {
+            background-color: #1abc9c;
+            color: #fff;
+        }
+
+        .fa {
+            font-family: FontAwesome;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            color: #676f7c;
+            padding: 0 40px 0 40px;
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 20%;
+            height: 100%;
+            object-fit: fill;
+            padding-top: 10px;
+            padding-bottom: 15px;
+        }
+
+        .menu {
+            width: 80%;
+            height: 100%;
+            padding-top: 25px;
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 30px;
+            font-weight: 400;
+            padding-left: 50px;
+        }
+
+        .menu>ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .menu>ul>li {
+            flex: 1;
+            text-align: center;
+            color: #676f7c;
+        }
+
+        .menu>ul>li:hover {
+            color: #00bf80;
+            text-decoration: underline #00bf80;
+            font-weight: bold;
+
+        }
+
+        .navbarmobile {
+            display: none;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logomobile {
+            display: none;
+            width: 50%;
+            height: 100%;
+        }
+
+        .buttommobile {
+            display: none;
+            width: 50%;
+            justify-content: flex-end;
+        }
+
+        .category {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(-45deg, #0F7243, #0F7243 50%, #11814F 50%) #0F7243;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .category>h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 30px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .paragraph {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            padding: 120px 40px 40px 40px;
+        }
+
+        .p1,
+        .p2,
+        .p3 {
+            border: 3px solid rgb(188, 255, 80);
+        }
+
+        @media screen and (max-width:480px) {
+            .navbarmobile {
+                position: relative;
+                display: block;
+                display: flex;
+                border-bottom: 0.5px solid #f2f3f5;
+            }
+
+            .logomobile {
+                display: block;
+                object-fit: fill;
+                padding: 10px 30px 10px 15px;
+            }
+
+            .buttommobile {
+                display: block;
+                padding-left: 40%;
+                padding-top: 10px;
+            }
+
+            .fa {
+                font-size: 20px;
+            }
+
+            .navbar {
+                display: none;
+                width: 100%;
+                color: #676f7c;
+                cursor: pointer;
+                position: absolute;
+                padding: 0;
+            }
+
+            .menu {
+                width: 100%;
+                font-family: sans-serif;
+                font-size: 16px;
+                line-height: 30px;
+                font-weight: 400;
+                align-items: center;
+                padding-top: 0;
+                padding-left: 0;
+            }
+
+            .menu>ul {
+                display: flex;
+                flex-direction: column;
+                background-color: #ffffff;
+                box-shadow: 2px 4px 5px #e4e7ec;
+            }
+
+            .menu>ul>li {
+                flex: 1;
+                text-align: left;
+                color: #676f7c;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                border-bottom: 0.5px solid #f2f3f5;
+                padding-left: 20px;
+            }
+
+            .menu>ul>li:hover {
+                color: #00bf80;
+                text-decoration: none;
+                font-weight: normal;
+            }
+            .menu>ul>li:last-of-type{
+                border-bottom: none;
+            }
+            .category {
+                height: 90px;
+                position: absolute;
+                z-index: -1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .paragraph {
+                display: block;
+                padding: 0;
+            }
+
+            .p1 {
+                margin-top: 110px;
+                margin-bottom: 10px;
+
+            }
+            .p2{
+                margin-bottom: 10px;
+            }
+
+            .infobar,
+            .navbar>.logo {
+                display: none;
+            }
+
+            .show-nav{
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="infobar">
+            <div class="infotext">
+                <div class="infoemail">
+                    <i class="fa fa-envelope"> info@javadeveloperzone.com</i>
+                </div>
+                <div class="infodownload">
+                    <i class="fa fa-android"> Downloads Java Developer Zone Android App</i>
+                </div>
+            </div>
+            <div class="infoicon">
+                <a target="_blank" href="https://www.facebook.com/Javadeveloperzone-1206970082685211">
+                    <button class="infoiconbtn infoiconbtn1"><i class="fa fa-facebook"></i></button></a>
+                <a target="_blank" href="https://twitter.com/dzjava">
+                    <button class="infoiconbtn infoiconbtn2"><i class="fa fa-twitter"></i></button></a>
+                <a target="_blank" href="https://plus.google.com/communities/115785669515158880959">
+                    <button class="infoiconbtn infoiconbtn3"><i class="fa fa-google-plus"></i></button></a>
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=com.eccelor.javadevzone">
+                    <button class="infoiconbtn infoiconbtn4"><i class="fa fa-android"></i></button></a>
+            </div>
+        </div>
+        <div class="navbarmobile">
+            <img class="logomobile" src="javadeveloper.jpg" alt="javadeveloper-image-mobile" />
+            <buttom id="signbtn" class="buttommobile btnmobile"><i class="fa fa-bars"></i></buttom>
+        </div>
+        <div class="navbar">
+            <img class="logo" src="javadeveloper.jpg" alt="javadeveloper-image" />
+            <div class="menu">
+                <ul>
+                    <li>Weekly Quiz</li>
+                    <li>Blog</li>
+                    <li>Categories</li>
+                    <li>Hire Team</li>
+                    <li>Guest Post</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </div>
+        <div class="category">
+            <h1>Category: Spring Boot</h1>
+        </div>
+        <div class="paragraph">
+            <div class="p1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, error! Aliquid,
+                culpa illum molestias sed non sequi recusandae nesciunt quas quasi, voluptatem dignissimos,
+                corrupti doloribus pariatur aspernatur qui corporis accusantium!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, error! Aliquid,
+                culpa illum molestias sed non sequi recusandae nesciunt quas quasi, voluptatem dignissimos,
+                corrupti doloribus pariatur aspernatur qui corporis accusantium!
+            </div>
+            <div class="p2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, error! Aliquid,
+                culpa illum molestias sed non sequi recusandae nesciunt quas quasi, voluptatem dignissimos,
+                corrupti doloribus pariatur aspernatur qui corporis accusantium!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, error! Aliquid,
+                culpa illum molestias sed non sequi recusandae nesciunt quas quasi, voluptatem dignissimos,
+                corrupti doloribus pariatur aspernatur qui corporis accusantium!
+            </div>
+            <div class="p3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, error! Aliquid,
+                culpa illum molestias sed non sequi recusandae nesciunt quas quasi, voluptatem dignissimos,
+                corrupti doloribus pariatur aspernatur qui corporis accusantium!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, error! Aliquid,
+                culpa illum molestias sed non sequi recusandae nesciunt quas quasi, voluptatem dignissimos,
+                corrupti doloribus pariatur aspernatur qui corporis accusantium!
+            </div>
+        </div>
+    </div>
+    <script>
+        const hamburgerButton = document.querySelector('.btnmobile');
+        hamburgerButton.addEventListener('click', function () {
+            const navbar = document.querySelector('.navbar');
+            const navbarStyle = navbar.style;
+            if (navbarStyle.getPropertyValue('display') === "none") {
+                navbarStyle.setProperty('display', 'flex');
+            } else {
+                navbarStyle.setProperty('display', 'none');
+            }
+        });
+    </script>
+</body>
+
+</html>
